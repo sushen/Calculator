@@ -55,8 +55,19 @@ public class MainActivity extends AppCompatActivity {
             tvNumber.setText(finalResult);
         }
     }
+    public void cleanMemory(View view){
+        tvNumber.setText("");
+    }
 
-
+    public void substracSrting(View view){
+        String str = tvNumber.getText().toString();
+        if (str.length() >= 1){
+            str = str.substring(0,str.length() - 1);
+            tvNumber.setText(str);
+        }else {
+            tvNumber.setText("");
+        }
+    }
 
 
 }
