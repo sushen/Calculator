@@ -236,18 +236,18 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text=""
-            android:tag="4"
-            android:onClick="setOperation"
+            android:text="."
+            android:tag="."
+            android:onClick="decimal"
             android:textSize="@dimen/text">
         </Button>
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text=""
-            android:tag="4"
-            android:onClick="setOperation"
+            android:text="%"
+            android:tag="%"
+            android:onClick="parcentise"
             android:textSize="@dimen/text">
         </Button>
         <Button

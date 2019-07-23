@@ -5,13 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView tvNumber;
-    int operation = 0;
-    int num1 = 0;
-    int num2 = 0;
+    double operation = 0;
+    double num1 = 0;
+    double num2 = 0;
 
 
     @Override
@@ -31,49 +32,70 @@ public class MainActivity extends AppCompatActivity {
         num1 = Integer.parseInt(tvNumber.getText().toString());
         tvNumber.setText("");
         operation = Integer.parseInt(view.getTag().toString());
-
-
     }
+
+//        public void setOperation(View view) {
+//            if(tvNumber.getText().toString() != null || !tvNumber.getText().toString().equal("")){
+//                num1 = Double.parseDouble(tvNumber.getText().toString());
+//                tvNumber.setText("");
+//                operation = Integer.parseInt(view.getTag().toString());
+//            }
+//            else
+//            {
+//                Toast.makeText(context, "Please enter valid number", Toast.LENGTH_SHORT).show();
+//            }
+//    }
+
+
     public void setEqual(View view){
         num2 = Integer.parseInt(tvNumber.getText().toString());
 
         if(operation == 1){
-            int result = num1+num2;
+            double result = num1+num2;
             String finalResult = String.valueOf(result);
             tvNumber.setText(finalResult);
         }else if(operation == 2){
-            int result = num1-num2;
+            double result = num1-num2;
             String finalResult = String.valueOf(result);
             tvNumber.setText(finalResult);
         }else if(operation == 3){
-            int result = num1*num2;
+            double result = num1*num2;
             String finalResult = String.valueOf(result);
             tvNumber.setText(finalResult);
         }else if(operation == 4){
-            int result = num1/num2;
+            double result = num1/num2;
             String finalResult = String.valueOf(result);
             tvNumber.setText(finalResult);
         }
     }
+    public void decimal(){
+        Toast.makeText(getApplicationContext(),"I am Going to main activety",Toast.LENGTH_LONG)
+                .show();
+    }
+
+
+
+    public void parcentise(){
+        Toast.makeText(getApplicationContext(),"Hello",Toast.LENGTH_SHORT).show();
+    }
+
     public void cleanMemory(View view){
         tvNumber.setText("");
     }
 
+
     public void substracSrting(View view){
         String str = tvNumber.getText().toString();
-        String[] parts = str.split("\\.");
-
-        if(parts[1].length() > 1){
-            str = str.substring(0, str.length() - 1);
+        if (str.length() >= 1){
+            str = str.substring(0,str.length() - 1);
+            tvNumber.setText(str);
         }else {
-            str = str.substring(0, str.length() - 2);
+            tvNumber.setText("");
         }
-        tvNumber.setText(str);
     }
 
-
-    ///public void clear(View view) {
-//        String str = textView.getText().toString();
+//    public void substracSrting(View view){
+//        String str = tvNumber.getText().toString();
 //        String[] parts = str.split("\\.");
 //
 //        if(parts[1].length() > 1){
@@ -81,10 +103,8 @@ public class MainActivity extends AppCompatActivity {
 //        }else {
 //            str = str.substring(0, str.length() - 2);
 //        }
-//
-//        textView.setText(str);
-
-
+//        tvNumber.setText(str);
+//    }
 
 }
 
@@ -101,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(context, "Please enter valid number", Toast.LENGTH_SHORT).show();
 //            }
 //    }
-//
+
 
 
 

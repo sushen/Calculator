@@ -18,9 +18,9 @@
             android:shape="rectangle">
             <stroke
                 android:color="@android:color/system_notification_accent_color"
-                android:width="2dp"/>
+                android:width="4dp"/>
 
-            <solid android:color="#bbbbbb"/>
+            <solid android:color="#fff"/>
             <corners android:radius="@dimen/radius" />
         </shape>
 
