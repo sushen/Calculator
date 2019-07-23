@@ -61,13 +61,48 @@ public class MainActivity extends AppCompatActivity {
 
     public void substracSrting(View view){
         String str = tvNumber.getText().toString();
-        if (str.length() >= 1){
-            str = str.substring(0,str.length() - 1);
-            tvNumber.setText(str);
+        String[] parts = str.split("\\.");
+
+        if(parts[1].length() > 1){
+            str = str.substring(0, str.length() - 1);
         }else {
-            tvNumber.setText("");
+            str = str.substring(0, str.length() - 2);
         }
+        tvNumber.setText(str);
     }
 
 
+    ///public void clear(View view) {
+//        String str = textView.getText().toString();
+//        String[] parts = str.split("\\.");
+//
+//        if(parts[1].length() > 1){
+//            str = str.substring(0, str.length() - 1);
+//        }else {
+//            str = str.substring(0, str.length() - 2);
+//        }
+//
+//        textView.setText(str);
+
+
+
 }
+
+
+
+//    public void operation(View view) {
+//            if(textView.getText().toString() != null || !textView.getText().toString().equal("")){
+//                var1 = Double.parseDouble(textView.getText().toString());
+//                textView.setText("");
+//                operation = Integer.parseInt(view.getTag().toString());
+//            }
+//            else
+//            {
+//                Toast.makeText(context, "Please enter valid number", Toast.LENGTH_SHORT).show();
+//            }
+//    }
+//
+
+
+
+
