@@ -86,25 +86,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void substracSrting(View view){
         String str = tvNumber.getText().toString();
-        if (str.length() >= 1){
-            str = str.substring(0,str.length() - 1);
-            tvNumber.setText(str);
-        }else {
-            tvNumber.setText("");
-        }
-    }
+        if(str.contains(".")){
+            String[] parts = str.split("\\.");
 
-//    public void substracSrting(View view){
-//        String str = tvNumber.getText().toString();
-//        String[] parts = str.split("\\.");
-//
-//        if(parts[1].length() > 1){
-//            str = str.substring(0, str.length() - 1);
-//        }else {
-//            str = str.substring(0, str.length() - 2);
-//        }
-//        tvNumber.setText(str);
-//    }
+            if (parts[1].length() > 1){
+                str = str.substring(0,str.length() - 1);
+            }else {
+                str = str.substring(0,str.length() - 2);
+            }
+            tvNumber.setText(str);
+
+        }else str = str.substring(0,str.length() - 1);
+        tvNumber.setText(str);
+    }
 
 }
 
