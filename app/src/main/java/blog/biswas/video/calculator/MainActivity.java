@@ -28,23 +28,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void setOperation(View view) {
-        num1 = Integer.parseInt(tvNumber.getText().toString());
-        tvNumber.setText("");
-        operation = Integer.parseInt(view.getTag().toString());
-    }
-
-//        public void setOperation(View view) {
-//            if(tvNumber.getText().toString() != null || !tvNumber.getText().toString().equal("")){
-//                num1 = Double.parseDouble(tvNumber.getText().toString());
-//                tvNumber.setText("");
-//                operation = Integer.parseInt(view.getTag().toString());
-//            }
-//            else
-//            {
-//                Toast.makeText(context, "Please enter valid number", Toast.LENGTH_SHORT).show();
-//            }
+//    public void setOperation(View view) {
+//        num1 = Integer.parseInt(tvNumber.getText().toString());
+//        tvNumber.setText("");
+//        operation = Integer.parseInt(view.getTag().toString());
 //    }
+
+        public void setOperation(View view) {
+            if(tvNumber.getText().toString() != null || !tvNumber.getText().toString().equals("")){
+                num1 = Double.parseDouble(tvNumber.getText().toString());
+                tvNumber.setText("");
+                operation = Integer.parseInt(view.getTag().toString());
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "Please enter valid number", Toast.LENGTH_SHORT).show();
+            }
+    }
 
 
     public void setEqual(View view){
@@ -68,15 +68,15 @@ public class MainActivity extends AppCompatActivity {
             tvNumber.setText(finalResult);
         }
     }
-    public void decimal(){
-        Toast.makeText(getApplicationContext(),"I am Going to main activety",Toast.LENGTH_LONG)
+    public void decimal(View view){
+        Toast.makeText(getApplicationContext(),"I am not Create yet",Toast.LENGTH_LONG)
                 .show();
     }
 
 
 
-    public void parcentise(){
-        Toast.makeText(getApplicationContext(),"Hello",Toast.LENGTH_SHORT).show();
+    public void parcentise(View view){
+        Toast.makeText(getApplicationContext(),"I am not Create yet",Toast.LENGTH_SHORT).show();
     }
 
     public void cleanMemory(View view){
